@@ -12,18 +12,6 @@ class Roles:
         
         self.caracteristique = caracteristique
 
-#Eveque = Roles("Eveque", "Vous recevez une pièce d’or par quartier religieux (bleu) dans votre cité. Vous ne pouvez pas être attaqué par le Condottiere.")
-
-#Architecte = Roles("Architecte", "Au début de votre tour, vous piochez deux cartes Quartiers supplémentaires – vous pouvez donc prendre en tout trois cartes, ou deux cartes et deux pièces d’or. Vous pouvez en outre bâtir jusqu’à trois quartiers durant votre tour.")
-
-#
-
-#
-
-#Assassin = Roles("Assassin", "Vous annoncez quel autre personnage vous assassinez. Le joueur qui a ce personnage ne doit pas réagir, et ne se déclarera pas non plus lorsque son personnage sera appelé. Il ne révèlera sa carte qu’en dernier, pour annoncer qu’il avait été assassiné et qu’il a donc passé sont tour.")
-
-#Magicien = Roles("Magicien", "À n’importe quel moment de votre tour*, vous pouvez, au choix : soit échanger toutes les cartes de votre main (pas celles de votre cité !) contre toutes les cartes de la main d’un autre joueur (vous pouvez faire cela même si vous n’avez pas de carte en main, et vous prenez alors les cartes de l’autre joueur). soit vous défausser d’un certain nombre de cartes de votre main, les placer sous la pioche, et piocher le même nombre de cartes en échange.")
-
 liste = ["Voleur", "Condottiere", "Architecte", "Roi", "Assassin", "Eveque", "Magicien", "Marchand"]
     
 for _ in range(1):
@@ -44,7 +32,7 @@ for _ in range(1):
     
     print(liste)
     
-    for _ in range(8):
+    for _ in range(5):
     
         Joueur = input("ROLE JOUEUR:")
         
@@ -75,3 +63,31 @@ for _ in range(1):
                 Marchand = Roles("Marchand", Player, "Vous recevez au début de votre tour une pièce d’or supplémentaire – vous pouvez donc prendre soit trois pièces d’or, soit une carte et une pièce d’or. Vous recevez en outre une pièce d’or par quartier commerçant (vert) dans votre cité*.")
             
                 print(Marchand.__dict__)
+                
+            case "Eveque":
+            
+                Eveque = Roles("Eveque", Player, "Vous recevez une pièce d’or par quartier religieux (bleu) dans votre cité. Vous ne pouvez pas être attaqué par le Condottiere.")
+            
+                print(Eveque.__dict__)
+        
+            case "Architecte":
+                
+                Architecte = Roles("Architecte", Player, "Au début de votre tour, vous piochez deux cartes Quartiers supplémentaires – vous pouvez donc prendre en tout trois cartes, ou deux cartes et deux pièces d’or. Vous pouvez en outre bâtir jusqu’à trois quartiers durant votre tour.")
+            
+                print(Architecte.__dict__)
+                
+            case "Magicien":
+            
+                Magicien = Roles("Magicien", Player, "À n’importe quel moment de votre tour*, vous pouvez, au choix : soit échanger toutes les cartes de votre main (pas celles de votre cité !) contre toutes les cartes de la main d’un autre joueur (vous pouvez faire cela même si vous n’avez pas de carte en main, et vous prenez alors les cartes de l’autre joueur). soit vous défausser d’un certain nombre de cartes de votre main, les placer sous la pioche, et piocher le même nombre de cartes en échange.")
+            
+                print(Magicien.__dict__)
+        
+            case "Assassin":
+                
+                Assassin = Roles("Assassin", Player, "Vous annoncez quel autre personnage vous assassinez. Le joueur qui a ce personnage ne doit pas réagir, et ne se déclarera pas non plus lorsque son personnage sera appelé. Il ne révèlera sa carte qu’en dernier, pour annoncer qu’il avait été assassiné et qu’il a donc passé sont tour.")
+            
+                print(Assassin.__dict__)
+                
+            case _:
+                
+                print("WRONG INPUT")
