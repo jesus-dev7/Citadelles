@@ -23,84 +23,118 @@ class Quartiers:
         self.Valeur = Valeur
         
         self.Couleur = Couleur
+        
+class Joueurs:
+    
+    def __init__(self, Quartiers, Pieces, Main):
+        
+        self.Quartiers = Quartiers
+        
+        self.Pieces = Pieces
+        
+        self.Main = Main
 
 def Quartiers_():
     
-    ListeQuartiers = ()
+    global TupleQuartiers
+    
+    TupleQuartiers = ()
     
     Temple = Quartiers("Temple", 1, "Bleu")
     
-    ListeQuartiers += ("Temple",)
+    TupleQuartiers += ("Temple",)
     
     Cathedrale = Quartiers("Cathedrale", 5, "Bleu")
     
-    ListeQuartiers += ("Cathedrale",)
+    TupleQuartiers += ("Cathedrale",)
     
     Eglise = Quartiers("Eglise", 2, "Bleu")
     
-    ListeQuartiers += ("Eglise",)
+    TupleQuartiers += ("Eglise",)
     
     Monastere = Quartiers("Monastere", 3, "Bleu")
     
-    ListeQuartiers += ("Monastere",)
+    TupleQuartiers += ("Monastere",)
     
     Chateau = Quartiers("Chateau", 4, "Jaune")
     
-    ListeQuartiers += ("Chateau",)
+    TupleQuartiers += ("Chateau",)
     
     Manoir = Quartiers("Manoir", 3, "Jaune")
     
-    ListeQuartiers += ("Manoir",)
+    TupleQuartiers += ("Manoir",)
     
     Palais = Quartiers("Palais", 5, "Jaune")
     
-    ListeQuartiers += ("Palais",)
+    TupleQuartiers += ("Palais",)
     
     Caserne = Quartiers("Caserne", 3, "Rouge")
     
-    ListeQuartiers += ("Caserne",)
+    TupleQuartiers += ("Caserne",)
     
     Forteresse = Quartiers("Forteresse", 5, "Rouge")
     
-    ListeQuartiers += ("Forteresse",)
+    TupleQuartiers += ("Forteresse",)
     
     Tour_de_guet = Quartiers("Tour_de_guet", 1, "Rouge")
     
-    ListeQuartiers += ("Tour_de_guet",)
+    TupleQuartiers += ("Tour_de_guet",)
     
     Prison = Quartiers("Prison", 2, "Rouge")
     
-    ListeQuartiers += ("Prison",)
+    TupleQuartiers += ("Prison",)
     
     Comptoir = Quartiers("Comptoir", 3, "Vert")
     
-    ListeQuartiers += ("Comptoir",)
+    TupleQuartiers += ("Comptoir",)
     
     Echoppe = Quartiers("Echoppe", 2, "Vert")
     
-    ListeQuartiers += ("Echoppe",)
+    TupleQuartiers += ("Echoppe",)
     
     Marche = Quartiers("Marche", 2, "Vert")
     
-    ListeQuartiers += ("Marche",)
+    TupleQuartiers += ("Marche",)
     
     Hotel_de_ville = Quartiers("Hotel_de_ville", 5, "Vert")
     
-    ListeQuartiers += ("Hotel_de_ville",)
+    TupleQuartiers += ("Hotel_de_ville",)
     
     Port = Quartiers("Port", 4, "Vert")
     
-    ListeQuartiers += ("Port",)
+    TupleQuartiers += ("Port",)
     
     Taverne = Quartiers("Taverne", 1, "Vert")
     
-    ListeQuartiers += ("Taverne",)
+    TupleQuartiers += ("Taverne",)
     
     print(Taverne.__dict__)
     
-    return(ListeQuartiers)
+    return(TupleQuartiers)
     
 print(Quartiers_())
+
+Pieces = 2
+
+def Main():
+    
+    global TupleQuartiers
+        
+    Main = ()
+        
+    for _ in range(3):
+            
+        rdm_ = random.randint(0, len(TupleQuartiers))
+            
+        Main += (TupleQuartiers[rdm_],)
+        
+    print(Main)
+        
+    Joueur1 = Joueurs({}, 0, Main)
+    
+    print(Joueur1.__dict__)
+    
+print(Main())
 
 liste = ["Voleur", "Condottiere", "Architecte", "Roi", "Assassin", "Eveque", "Magicien", "Marchand"]
     
